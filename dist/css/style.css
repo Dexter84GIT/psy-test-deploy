@@ -19,6 +19,10 @@ body {
     background: var(--main-white);
     color: var(--main-blue);
 }
+body.dark {
+    background: var(--main-blue);
+    color: var(--main-white);
+}
 section {
     padding: 20px 0;
 }
@@ -26,6 +30,13 @@ section {
     padding: 15px;
     border: 1px solid var(--main-blue);
     border-radius: 5px;
+    background: var(--main-white);
+    color: var(--main-blue);
+}
+.dark .quiz-block {
+    border-color: var(--main-white);
+    color: var(--main-white);
+    background: var(--main-blue);
 }
 button {
     font-family: "Arsenal", serif;
@@ -35,6 +46,10 @@ button {
     border: 1px solid var(--main-blue);
     padding: 15px;
     text-align: center;
+    font-size: 20px;
+}
+.dark button {
+    border-color: var(--main-white);
 }
 ul {
     list-style-type: none;
@@ -55,7 +70,7 @@ ul {
     flex-direction: column;
 }
 .container {
-    max-width: 1400px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
     display: flex;
@@ -66,6 +81,7 @@ ul {
 #quiz-header {
     font-size: 20px;
     text-align: center;
+    font-weight: 500;
 }
 /*FORM*/
 #dataForm {
@@ -79,25 +95,53 @@ ul {
     padding: 15px;
     border: 1px solid var(--main-blue);
     outline: none;
+    background: var(--main-white);
+}
+.dark #dataForm input {
+    border-color: var(--main-white);
+    background: var(--main-blue);
+    color: var(--main-white);
 }
 .submit-button {
     width: 100%;
+    background: var(--main-blue);
+    color: var(--main-white);
+}
+.submit-button:hover {
+    opacity: 0.9;
+    transition: .3s;
+}
+.submit-button:not(hover) {
+    transition: .3s;
+}
+.input-row {
+    justify-content: space-between;
 }
 .input-field {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    max-width: 49%;
+    width: 100%;
+}
+.input-field input {
+    width: 100%;
+}
+.input-field span {
+    color: #330000;
 }
 /*QUIZ*/
 #quiz-body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: relative;
 }
 .disclaimer {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-size: 20px;
 }
 .answers-list {
     display: flex;
@@ -108,6 +152,9 @@ ul {
     padding: 10px;
     border: 1px solid var(--main-blue);
     border-radius: 10px;
+}
+.dark .answer {
+    border-color: var(--main-white);
 }
 .select {
     margin-left: 30px;
@@ -121,30 +168,65 @@ ul {
     border-radius: 5px;
     border: 1px solid var(--main-blue);
     display: block;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
 }
-/* .select-box label:has(input[type="checkbox"]:checked) {
-    background: var(--main-blue);
-    color: var(--main-white);
-} */
+.dark .select-box label {
+    border-color: var(--main-white);
+}
 .select-box label:has(.checked) {
     background: var(--main-blue);
     color: var(--main-white);
 }
-#question-counter {
+.dark .select-box label:has(.checked) {
+    background: var(--main-white);
+    color: var(--main-blue);
+}
+#float-buttons {
     position: fixed;
     bottom: 15px;
     left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#question-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-white);
+}
+.dark #question-counter {
+    background: var(--main-blue);
+}
+#float-buttons > div {
+    width: 40px;
+    height: 40px;
     font-size: 20px;
     font-weight: 600;
     border-radius: 50%;
     border: 1px solid var(--main-blue);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--main-blue);
+    cursor: pointer;
+}
+.dark #float-buttons > div {
+    border-color: var(--main-white);
+    color: var(--main-white);
+}
+#vk-link {
+    background: url(../img/unicorn_nobg_rtl.webp) no-repeat center center /contain;
+}
+#theme-switcher {
+    background: url(../img/lamp-slash.svg) no-repeat center center /contain;
+    background-size: 70%;
+}
+.dark #theme-switcher {
+    background: url(../img/lamp-on.svg) no-repeat center center /contain;
+    background-size: 70%;
+}
+#float-buttons > div img {
+    width: 100%;
+    border-radius: 50%
 }
 /*BUTTONS*/
 #buttons-block {
@@ -152,7 +234,7 @@ ul {
     justify-content: space-between;
 }
 .main-button {
-    max-width: 32%;
+    max-width: 49%;
     width: 100%;
     text-align: center;
 }
@@ -161,8 +243,9 @@ ul {
     color: lightgray;
 }
 #next-question:not(disabled) {
-    background: green;
+    background: #075205;
     color: #fff;
+    border: 1px solid #075205;
 }
 #cancel-question:disabled {
     background: var(--main-white);
@@ -171,6 +254,7 @@ ul {
 #cancel-question:not(disabled) {
     background: #630e0e;
     color: var(--main-white);
+    border: 1px solid #630e0e;
 }
 /*RESULTS*/
 .level {
@@ -184,6 +268,7 @@ ul {
 .finish-buttons {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 .finish-buttons a {
     display: block;
@@ -194,6 +279,10 @@ ul {
     border-radius: 5px;
     cursor: pointer;
     height: fit-content;
+    border: 1px solid var(--main-blue);
+}
+.dark .finish-buttons a {
+    border-color: var(--main-white);
 }
 .levels-summary {
     gap: 10px;
@@ -204,6 +293,9 @@ ul {
     border-radius: 5px;
     gap: 10px;
     align-items: center;
+}
+.dark .levels-summary div {
+    border-color: var(--main-white);
 }
 .level-name {
     font-size: 16px;
@@ -216,34 +308,45 @@ ul {
 .result-levels {
     max-width: 50%;
     width: 100%;
+    font-size: 20px;
+}
+.level-description {
+    font-size: 20px;
 }
 .tooltip {
     position: relative;
 }
 .tooltip .tooltip-text {
     visibility: hidden;
-    max-width: 70%;
+    max-width: 100%;
     width: 100%;
-    background-color: var(--main-blue);
+    background: var(--main-blue);
     color: #fff;
     padding: 5px 15px;
     border-radius: 5px;
     top: -17px;
-    left: 110%;
+    left: 120%;
     margin-left: -60px;
     position: absolute;
     z-index: 1;
     opacity: 0;
 }
+.dark .tooltip .tooltip-text {
+    background: var(--main-white);
+    color: var(--main-blue);
+}
 .tooltip .tooltip-text::before {
     width: 20px;
     height: 12px;
-    background: var(--blue);
+    background: var(--main-blue);
     content: '';
     position: absolute;
     left: -20px;
     top: 40%;
     clip-path: polygon(100% 6%, 0 50%, 100% 92%);
+}
+.dark .tooltip .tooltip-text::before {
+    background: var(--main-white);
 }
 .tooltip:hover .tooltip-text {
     visibility: visible;
@@ -253,4 +356,18 @@ ul {
 
 .tooltip:not(hover) .tooltip-text {
     transition: 0.3s ease-in;
+}
+.fekla {
+    max-width: 300px;
+    position: absolute;
+    top: 10%;
+    left: 0px;
+    z-index: -10;
+}
+.fekla.move {
+    transform: translateX(-200px) rotate(-45deg);
+    transition: 5s;
+}
+.fekla img {
+    width: 100%;
 }

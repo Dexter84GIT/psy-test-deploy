@@ -1,4 +1,5 @@
 import questionsPack from "./modules/questionsPack"
+import themeSwitch from "./modules/themeSwitch";
 
 const header = document.getElementById('quiz-header');
 const body = document.getElementById('quiz-body');
@@ -23,17 +24,25 @@ const quiz = () => {
     body.innerHTML = `
         <div class="form">
             <form action="" class="contact-form" id="dataForm">
-                <div class="input-field">
-                    <label for="name-input">имя</label>
-                    <input type="text" name="name" id="name-input" required>
+                <div class="input-row df">
+                    <div class="input-field">
+                        <label for="name-input">имя<span> *</span></label>
+                        <input type="text" name="name" id="name-input" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="surname-input">фамилия<span> *</span></label>
+                        <input type="text" name="surname" id="surname-input" required>
+                    </div>
                 </div>
-                <div class="input-field">
-                    <label for="email-input">email</label>
-                    <input type="email" name="email" id="email-input" required>
-                </div>
-                <div class="input-field">
-                    <label for="tel-input">телефон</label>
-                    <input type="tel" name="tel" id="tel-input" required>
+                <div class="input-row df">
+                    <div class="input-field">
+                        <label for="email-input">email<span> *</span></label>
+                        <input type="email" name="email" id="email-input" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="phone-input">телефон</label>
+                        <input type="tel" name="phone" id="phone-input">
+                    </div>
                 </div>
                 <button class="submit-button" id="submit-button" type="submit">отправить</button>
                 <p id="formMessage"></p>
@@ -101,16 +110,14 @@ const disclaimer = () => {
 // показать вопрос
 const showQuestion = () => {
     cleadPage()
-    let answersLevel = []
-    // вставляем кнопки
 
     questionCounter.textContent = questionIndex + 1
 
     buttons.innerHTML = `
         <div class="buttons-wrapper" id="buttons-wrapper">
             <div class="buttons-block" id="buttons-block">
-                <button class="main-button cancel-button" id="cancel-question">сброс ответов</button>
-                <button class="main-button next-button" id="next-question" disabled>следующий вопрос</button>
+                <button class="main-button cancel-button" id="cancel-question">сброс</button>
+                <button class="main-button next-button" id="next-question" disabled>ответить</button>
             </div>
         </div>
     `
@@ -302,7 +309,13 @@ const results = () => {
 
     const finishLevel = levels.slice(0)
     const data = JSON.parse(localStorage.getItem('userdata'))
+    // добавляем дату прохождения
+    let date = new Date()
+    let testYear = date.getFullYear()
+    let testMothh = date.getMonth()
+    let testDay = date.getDate()
 
+    // фильтуем массив и выдёргиваем количество уровней каждого типа в отдельные переменные
     let finishLevelA1 = finishLevel.filter(x => x === "a1").length
     let finishLevelA2 = finishLevel.filter(x => x === "a2").length
     let finishLevelB1 = finishLevel.filter(x => x === "b1").length
@@ -314,7 +327,6 @@ const results = () => {
     let finishLevelValue = ''
     // переменная под описание общего уровня
     let finishLevelDescription = ''
-    const allData = [finishLevelValue, finishLevel, data]
     // заменяем значения в массиве на числа
     finishLevel.forEach(level => {
         if (level.includes('a1')) {
@@ -394,7 +406,30 @@ const results = () => {
             <a>таблица рейтинга</a>
         </div>
     </div>`
+    const createResults = (data) => {
+        data.forEach(item => {
+            console.log(item);
+        })
+        body.innerHTML += `
+        <div class="accordeon rating-table">
+            <p class="accordeon-title rating-title">таблица рейтинга</p>
+        </div> `
+    }
+    // Загрузка данных из файла data.json
+    // fetch('http://localhost:3100/data.json', {
+    //     method: 'GET',
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //     }
+    // })
+    //     .then(response => response.json())
+    //     .then(jsonData => console.log(jsonData));
     body.innerHTML += `<p class="level-description">${finishLevelDescription}</p>`
+    body.innerHTML += `
+        <div class="fekla">
+            <img src="../img/unicorn_nobg_rtl.webp" alt="fekla">
+        </div>
+    `
     questions.forEach((question, index) => {
         body.innerHTML += `
             <div class="result-table">
@@ -404,37 +439,52 @@ const results = () => {
                     <span class="tooltip-text">${questionDescriptions[index]}</span>
                 </div>
             </div>
-        `
-    })            // Отправляем данные на сервер
-    fetch('/submit', {
+    `
+    buttons.innerHTML = '';
+    questionCounter.style.display = 'none';
+    const unicorn = () => {
+        const img = document.querySelector('.fekla')
+        img.classList.add('move')
+    }
+    setTimeout(unicorn, 5000)
+    })            //  Отправляем данные на сервер
+    fetch('http://localhost:3100/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            finishLevelValue: finishLevelValue,
-            finishLevelA1: finishLevelA1,
-            finishLevelA2: finishLevelA2,
-            finishLevelB1: finishLevelB1,
-            finishLevelB2: finishLevelB2,
-            finishLevelC1: finishLevelC1,
-            finishLevelC2: finishLevelC2,
-            userData: data  // используем данные пользователя
+            level: finishLevelValue,
+            details: {
+                A1: finishLevelA1,
+                A2: finishLevelA2,
+                B1: finishLevelB1,
+                B2: finishLevelB2,
+                C1: finishLevelC1,
+                C2: finishLevelC2
+            },
+            levels: levels,
+            userData: data,
+            date: {
+                year: testYear,
+                month: testMothh,
+                day: testDay
+            }
         }),
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        header.textContent = data.message;
-    })
-    .catch((error) => {
-        console.error('Ошибка:', error);
-        header.textContent = 'Произошла ошибка при отправке результатов.';
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            header.textContent = data.message;
+        })
+        .catch((error) => {
+            console.error('Ошибка:', error);
+            header.textContent = 'Произошла ошибка при отправке результатов.';
+        });
     // fetch('http://localhost:8000/src/modules/mailer', {
     //     method: 'POST',
     //     headers: {
@@ -464,3 +514,4 @@ const results = () => {
 
 
 quiz()
+themeSwitch()

@@ -1,16 +1,522 @@
 [
   {
-    "finishLevelValue": "b1",
-    "finishLevelA1": 1,
-    "finishLevelA2": 0,
-    "finishLevelB1": 1,
-    "finishLevelB2": 0,
-    "finishLevelC1": 0,
-    "finishLevelC2": 0,
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
     "userData": {
-      "name": "Зайцев Никита",
+      "name": "Никита",
+      "surname": "Зайцев",
       "email": "fenixzaec@mail.ru",
-      "tel": "9771390109"
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "BATOROVNA BALGANOVA",
+      "surname": "BALGANOVA",
+      "email": "fenixzaec@yandex.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 0,
+      "A2": 1,
+      "B1": 0,
+      "B2": 0,
+      "C1": 1,
+      "C2": 0
+    },
+    "levels": [
+      "a2",
+      "c1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 0,
+      "A2": 0,
+      "B1": 1,
+      "B2": 1,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "b2",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Nick",
+      "surname": "Zaitsev",
+      "email": "fenixzaec@yandex.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
+    }
+  },
+  {
+    "level": "b1",
+    "details": {
+      "A1": 1,
+      "A2": 0,
+      "B1": 1,
+      "B2": 0,
+      "C1": 0,
+      "C2": 0
+    },
+    "levels": [
+      "a1",
+      "b1"
+    ],
+    "userData": {
+      "name": "Никита",
+      "surname": "Зайцев",
+      "email": "fenixzdadssadsaasdsdadsaasddsaaec@mail.ru",
+      "phone": "9771390109"
+    },
+    "date": {
+      "year": 2025,
+      "month": 3,
+      "day": 21
     }
   }
 ]

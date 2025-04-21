@@ -5,10 +5,8 @@ const fs = require('fs'); // Импортируем файл для работы
 const app = express(); // Создаем экземпляр приложения Express
 const PORT = process.env.PORT || 3100; // Определяем порт для сервера, по умолчанию 3000
 
-
-
 app.use(cors());
-
+app.use(express.static('/'));
 app.use(express.json()); 
 
 app.use(bodyParser.json()); // Используем middlewares для обработки JSON в запросах
