@@ -406,7 +406,7 @@ const results = () => {
             </div>
         `
     })            // Отправляем данные на сервер
-    fetch('http://localhost:3100/submit', {
+    fetch('/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
