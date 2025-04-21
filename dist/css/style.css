@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-blue: #002a43;
+    --main-black: #292D32;
+    --main-white: #ffffff;
+}
+
+body {
+    font-family: "Arsenal", serif;
+    font-weight: 400;
+    font-style: normal;
+    background: var(--main-white);
+    color: var(--main-blue);
+}
+section {
+    padding: 20px 0;
+}
+.quiz-block {
+    padding: 15px;
+    border: 1px solid var(--main-blue);
+    border-radius: 5px;
+}
+button {
+    font-family: "Arsenal", serif;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--main-blue);
+    padding: 15px;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+}
+.dn {
+    display: none;
+}
+.df {
+    display: flex;
+}
+.jcsb {
+    justify-content: space-between;
+}
+.aic {
+    align-items: center;
+}
+.fdc {
+    flex-direction: column;
+}
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/*HEADER*/
+#quiz-header {
+    font-size: 20px;
+    text-align: center;
+}
+/*FORM*/
+#dataForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#dataForm input {
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid var(--main-blue);
+    outline: none;
+}
+.submit-button {
+    width: 100%;
+}
+.input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+/*QUIZ*/
+#quiz-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.disclaimer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.answers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.answer {
+    padding: 10px;
+    border: 1px solid var(--main-blue);
+    border-radius: 10px;
+}
+.select {
+    margin-left: 30px;
+    gap: 5px;
+}
+.select-box input {
+    position: absolute;
+    left: -9999px;
+}
+.select-box label {
+    border-radius: 5px;
+    border: 1px solid var(--main-blue);
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+/* .select-box label:has(input[type="checkbox"]:checked) {
+    background: var(--main-blue);
+    color: var(--main-white);
+} */
+.select-box label:has(.checked) {
+    background: var(--main-blue);
+    color: var(--main-white);
+}
+#question-counter {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50%;
+    border: 1px solid var(--main-blue);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*BUTTONS*/
+#buttons-block {
+    display: flex;
+    justify-content: space-between;
+}
+.main-button {
+    max-width: 32%;
+    width: 100%;
+    text-align: center;
+}
+#next-question:disabled {
+    background: var(--main-white);
+    color: lightgray;
+}
+#next-question:not(disabled) {
+    background: green;
+    color: #fff;
+}
+#cancel-question:disabled {
+    background: var(--main-white);
+    color: lightgray;
+}
+#cancel-question:not(disabled) {
+    background: #630e0e;
+    color: var(--main-white);
+}
+/*RESULTS*/
+.level {
+    font-size: 18px;
+    gap: 10px;
+}
+.level span {
+    font-size: 24px;
+    font-weight: bold;
+}
+.finish-buttons {
+    display: flex;
+    gap: 10px;
+}
+.finish-buttons a {
+    display: block;
+    padding: 10px;
+    background: var(--main-blue);
+    color: var(--main-white);
+    font-size: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: fit-content;
+}
+.levels-summary {
+    gap: 10px;
+}
+.levels-summary div {
+    padding: 10px;
+    border: 1px solid var(--main-blue);
+    border-radius: 5px;
+    gap: 10px;
+    align-items: center;
+}
+.level-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+.level-value {
+    font-size: 15px;
+    font-weight: normal;
+}
+.result-levels {
+    max-width: 50%;
+    width: 100%;
+}
+.tooltip {
+    position: relative;
+}
+.tooltip .tooltip-text {
+    visibility: hidden;
+    max-width: 70%;
+    width: 100%;
+    background-color: var(--main-blue);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    top: -17px;
+    left: 110%;
+    margin-left: -60px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+}
+.tooltip .tooltip-text::before {
+    width: 20px;
+    height: 12px;
+    background: var(--blue);
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 40%;
+    clip-path: polygon(100% 6%, 0 50%, 100% 92%);
+}
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s ease-in;
+}
+
+.tooltip:not(hover) .tooltip-text {
+    transition: 0.3s ease-in;
+}
